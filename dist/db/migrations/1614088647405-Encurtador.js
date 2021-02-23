@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Encurtador1614088647405 = void 0;
