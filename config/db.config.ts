@@ -9,6 +9,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   password: <string>process.env.DB_PASSWORD,
   database: <string>process.env.DB_NAME,
   entities: [join(__dirname, '../**/**/*entity{.ts,.js}')],
+  autoLoadEntities: true,
   migrations: ['dist/db/migrations/**/*.{js,ts}'],
   cli: {
     migrationsDir: 'db/migrations',
