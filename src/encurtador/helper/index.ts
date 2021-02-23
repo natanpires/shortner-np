@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import * as md5 from 'md5';
 import * as URI from 'uri-js';
 

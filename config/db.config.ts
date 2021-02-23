@@ -1,7 +1,7 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
-  type: 'postgres',
+  type: process.env.DB_CONNECTION as 'postgres',
   host: <string>process.env.DB_HOST,
   port: Number(process.env.DB_PORT),
   username: <string>process.env.DB_USER,
@@ -13,4 +13,5 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     migrationsDir: 'db/migrations',
   },
   synchronize: true,
+  // ssl: { rejectUnauthorized: false },
 };

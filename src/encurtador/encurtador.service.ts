@@ -40,24 +40,16 @@ export class EncurtadorService {
     const obj = new ShowDto();
     obj.url = link.url;
     obj.newUrl = `http://localhost:8081/${link.code}`;
-
     return obj;
   }
 
   async find(code: string): Promise<ShowDto> {
     const existing = await this.repo.findOne({ code });
     if (existing) {
-      if (new Date() > existing.expiresAt) {
-        await this.repo.delete({ code: existing.code });
-        throw new HttpException('Shortened url expired.', HttpStatus.NOT_FOUND);
-      } else {
-        const ret = new ShowDto();
-        ret.url = existing.url;
-        ret.newUrl = `http://localhost:8081/${existing.code}`;
-        return ret;
-      }
-    } else {
-      throw new HttpException('Shortened url not found.', HttpStatus.NOT_FOUND);
+      const ret = new ShowDto();
+      ret.url = existing.url;
+      return ret;
     }
+    throw new HttpException('Shortened url not found.', HttpStatus.NOT_FOUND);
   }
 }

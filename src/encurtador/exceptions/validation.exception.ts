@@ -1,7 +1,8 @@
-import { UnprocessableEntityException } from '@nestjs/common';
+/* istanbul ignore file */
+import { BadRequestException } from '@nestjs/common';
 import { ValidationError } from 'class-validator';
 
-export class ValidationException extends UnprocessableEntityException {
+export class ValidationException extends BadRequestException {
   constructor(errors: ValidationError[]) {
     let messages = {};
 

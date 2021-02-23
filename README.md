@@ -35,19 +35,16 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+$ docker-compose up -d
+$ docker-compose exec app bash
+$ db:migrate
 ```
 
 ## Test
 
 ```bash
+$ docker-compose exec app bash
+
 # unit tests
 $ npm run test
 
