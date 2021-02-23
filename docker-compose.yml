@@ -1,0 +1,37 @@
+version: "3.6"
+
+services:
+  app:
+    volumes:
+      - .:/app
+      - /app/node_modules
+    build: .
+    user: root
+    command: sh -c "npm install && npm run start:debug"
+    environment:
+      API_URL: localhost:8081
+      PORT: 8081
+      # Database
+      DB_CONNECTION: postgres
+      DB_HOST: ec2-67-202-63-147.compute-1.amazonaws.com
+      DB_NAME: dd54vqta882hbs
+      DB_USER: wipvsotzotwfgo
+      DB_PASSWORD: bc8750f07874c6937ce2383b3159cf19f449bec73671b15c7e909c1305d69151
+      DB_PORT: 5432
+    depends_on:
+      - db
+    ports:
+      - 8081:8081
+    links:
+      - db:db
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: urlshort
+      POSTGRES_USER: urlshort
+      POSTGRES_DB: urlshort
+      TZ: GMT
