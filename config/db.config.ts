@@ -1,13 +1,14 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { join } from 'path';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: process.env.DB_CONNECTION as 'postgres',
   host: <string>process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
+  port: parseInt(process.env.DB_PORT),
   username: <string>process.env.DB_USER,
   password: <string>process.env.DB_PASSWORD,
   database: <string>process.env.DB_NAME,
-  entities: [__dirname + '/../**/*.entity.{js,ts}'],
+  entities: [join(__dirname, '../**/**/*entity{.ts,.js}')],
   migrations: ['dist/db/migrations/**/*.{js,ts}'],
   cli: {
     migrationsDir: 'db/migrations',
