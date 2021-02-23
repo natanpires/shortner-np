@@ -1,9 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { typeOrmConfig } from '../config/db.config';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import typeOrmConfig from '../config/db.config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { EncurtadorModule } from '../src/encurtador/encurtador.module';
+import { EncurtadorService } from 'src/encurtador/encurtador.service';
 
 let code = '';
 
@@ -12,7 +14,18 @@ describe('Encurtador (e2e)', () => {
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [EncurtadorModule, TypeOrmModule.forRoot(typeOrmConfig)],
+      imports: [
+        TypeOrmModule.forRootAsync({
+          inject: [EncurtadorService],
+          useFactory: (config: ConfigService) =>
+            config.get<TypeOrmModuleOptions>('db.config'),
+        }),
+        ConfigModule.forRoot({
+          isGlobal: true,
+          load: [typeOrmConfig],
+        }),
+        EncurtadorModule,
+      ],
     }).compile();
 
     app = moduleFixture.createNestApplication();

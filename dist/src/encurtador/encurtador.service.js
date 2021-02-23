@@ -34,7 +34,7 @@ let EncurtadorService = class EncurtadorService {
             else {
                 const ret = new show_dto_1.ShowDto();
                 ret.url = existing.url;
-                ret.newUrl = `${process.env.HOST}/${existing.code}`;
+                ret.newUrl = `${process.env.API_URL}/${existing.code}`;
                 return ret;
             }
         }
@@ -46,7 +46,7 @@ let EncurtadorService = class EncurtadorService {
         await this.repo.save(link);
         const obj = new show_dto_1.ShowDto();
         obj.url = link.url;
-        obj.newUrl = `${process.env.HOST}/${link.code}`;
+        obj.newUrl = `${process.env.API_URL}/${link.code}`;
         return obj;
     }
     async find(code) {

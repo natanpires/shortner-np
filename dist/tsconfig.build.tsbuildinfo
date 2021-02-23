@@ -2837,13 +2837,8 @@
         "affectsGlobalScope": false
       },
       "../config/db.config.ts": {
-        "version": "185259a09a5adc028bd8038e7805246be5bd2594a673dac14de4b2fbf9b49828",
-        "signature": "e48d1e836452920a823efe3c1f15dbaa531cbb2c536b3d47ad06ed5201a8b847",
-        "affectsGlobalScope": false
-      },
-      "../ormconfig.ts": {
-        "version": "e1769073a0268938cc48fa6ccbecd00e303a4b8e6f2faa98021225d7eff24564",
-        "signature": "e1769073a0268938cc48fa6ccbecd00e303a4b8e6f2faa98021225d7eff24564",
+        "version": "919effb341a0bdf9f625aa1cb397676c6b67eb0b828cb45b5ea99aa45a09a27a",
+        "signature": "c1a460c4ed7ee2ada9d4e2c6305b89e99d658a5553c8ad48e45c1f0a3f3b6e39",
         "affectsGlobalScope": false
       },
       "../db/migrations/1614088647405-Encurtador.ts": {
@@ -3882,7 +3877,7 @@
         "affectsGlobalScope": false
       },
       "../src/encurtador/encurtador.service.ts": {
-        "version": "05ad3f4feeb948d463550519a7bffb839aeb70c7f5e6844046e24c54356584f7",
+        "version": "0e3b2e9dbc4392686c04780df872e3109e1bcdf2d53de2d50df7f38d72af1146",
         "signature": "91a841ef7e9f3b23a77fce691fcdaf66d3583777170b74164db941bc1c875f8c",
         "affectsGlobalScope": false
       },
@@ -3942,7 +3937,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "acca4230cb9c5234c90c7a2da370e7679a6e5b1ec9d25d318a2107dbf809a45d",
+        "version": "e0c9b5f53a3e509a0cb3bfe8977837023bf9f75be7560a65e2b49902adab3f09",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -4608,7 +4603,8 @@
     },
     "referencedMap": {
       "../config/db.config.ts": [
-        "../node_modules/@nestjs/typeorm/index.d.ts"
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/node/path.d.ts"
       ],
       "../db/migrations/1614088647405-Encurtador.ts": [
         "../node_modules/typeorm/index.d.ts"
@@ -7893,9 +7889,6 @@
         "../node_modules/typeorm/metadata/EntityMetadata.d.ts",
         "../node_modules/typeorm/metadata/RelationMetadata.d.ts",
         "../node_modules/typeorm/query-runner/QueryRunner.d.ts"
-      ],
-      "../ormconfig.ts": [
-        "../config/db.config.ts"
       ],
       "../src/app.module.ts": [
         "../config/db.config.ts",
@@ -11245,9 +11238,6 @@
         "../node_modules/typeorm/metadata/RelationMetadata.d.ts",
         "../node_modules/typeorm/query-runner/QueryRunner.d.ts"
       ],
-      "../ormconfig.ts": [
-        "../config/db.config.ts"
-      ],
       "../src/encurtador/encurtador.controller.ts": [
         "../src/encurtador/dto/create.dto.ts",
         "../src/encurtador/dto/show.dto.ts",
@@ -12180,7 +12170,6 @@
       "../node_modules/typescript/lib/lib.scripthost.d.ts",
       "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
       "../node_modules/uri-js/dist/es5/uri.all.d.ts",
-      "../ormconfig.ts",
       "../src/app.module.ts",
       "../src/encurtador/dto/create.dto.ts",
       "../src/encurtador/dto/show.dto.ts",

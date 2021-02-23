@@ -15,7 +15,7 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [typeorm_1.TypeOrmModule.forRoot(db_config_1.typeOrmConfig), encurtador_module_1.EncurtadorModule],
+        imports: [typeorm_1.TypeOrmModule.forRoot(db_config_1.default()), encurtador_module_1.EncurtadorModule],
         controllers: [],
         providers: [],
     })
