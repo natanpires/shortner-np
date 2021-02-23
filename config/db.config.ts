@@ -15,6 +15,7 @@ const typeOrmConfig = (): TypeOrmModuleOptions => ({
     migrationsDir: 'db/migrations',
   },
   synchronize: false,
+  ssl: { rejectUnauthorized: false },
 });
 
 export default typeOrmConfig;
