@@ -12,6 +12,6 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   cli: {
     migrationsDir: 'db/migrations',
   },
-  synchronize: true,
-  ssl: { rejectUnauthorized: false },
+  synchronize: false,
+  // ssl: { rejectUnauthorized: false },
 };
