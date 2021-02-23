@@ -25,7 +25,7 @@ export class EncurtadorService {
       } else {
         const ret = new ShowDto();
         ret.url = existing.url;
-        ret.newUrl = `http://localhost:8081/${existing.code}`;
+        ret.newUrl = `${process.env.HOST}/${existing.code}`;
         return ret;
       }
     }
@@ -39,7 +39,7 @@ export class EncurtadorService {
 
     const obj = new ShowDto();
     obj.url = link.url;
-    obj.newUrl = `http://localhost:8081/${link.code}`;
+    obj.newUrl = `${process.env.HOST}/${link.code}`;
     return obj;
   }
 
