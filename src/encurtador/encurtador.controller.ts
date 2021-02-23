@@ -15,7 +15,7 @@ export class EncurtadorController {
   }
 
   @Get(':code')
-  @Redirect()
+  // @Redirect() - uncomment it if you want to redirect.
   async get(@Param() params): Promise<ShowDto> {
     return this.service.find(params.code);
   }
