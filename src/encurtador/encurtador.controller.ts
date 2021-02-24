@@ -1,4 +1,4 @@
-import { Get, Header, Param, Redirect } from '@nestjs/common';
+import { Get, Header, Param } from '@nestjs/common';
 import { Controller, Post, Body } from '@nestjs/common';
 import { EncurtadorService } from './encurtador.service';
 import { CreateDto } from './dto/create.dto';
@@ -16,7 +16,7 @@ export class EncurtadorController {
 
   @Get(':code')
   // @Redirect() - uncomment it if you want to redirect.
-  async get(@Param() params): Promise<ShowDto> {
-    return this.service.find(params.code);
+  async get(@Param('code') code): Promise<ShowDto> {
+    return this.service.find(code);
   }
 }

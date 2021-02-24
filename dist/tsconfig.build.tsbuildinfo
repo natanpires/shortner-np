@@ -2837,7 +2837,7 @@
         "affectsGlobalScope": false
       },
       "../config/db.config.ts": {
-        "version": "919effb341a0bdf9f625aa1cb397676c6b67eb0b828cb45b5ea99aa45a09a27a",
+        "version": "7ec6f60de2470ff01c94d94e645860fde793c846ee48baaba82618e38f6bf6bf",
         "signature": "c1a460c4ed7ee2ada9d4e2c6305b89e99d658a5553c8ad48e45c1f0a3f3b6e39",
         "affectsGlobalScope": false
       },
@@ -3882,8 +3882,8 @@
         "affectsGlobalScope": false
       },
       "../src/encurtador/encurtador.controller.ts": {
-        "version": "c8990b1be85361b3a78675c1962a9f2e56aca1165d827106a1542427504cd8c2",
-        "signature": "d94e65a361204e330fbe80174a77b35292e4e62bf0f204e941655c2d02cb8a1e",
+        "version": "3c5321a4ed58ed514d989580916c3aadc6a50ce96f29f2fcf60f9adffd8f6191",
+        "signature": "a233cc9f98edc1e73a4a57451781b3ef1867374538ee88f71c9232d37c5352c4",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/range-parser/index.d.ts": {

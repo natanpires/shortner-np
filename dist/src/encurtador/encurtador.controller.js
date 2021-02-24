@@ -24,8 +24,8 @@ let EncurtadorController = class EncurtadorController {
     async create(dto) {
         return this.service.create(dto);
     }
-    async get(params) {
-        return this.service.find(params.code);
+    async get(code) {
+        return this.service.find(code);
     }
 };
 __decorate([
@@ -38,8 +38,7 @@ __decorate([
 ], EncurtadorController.prototype, "create", null);
 __decorate([
     common_1.Get(':code'),
-    common_1.Redirect(),
-    __param(0, common_1.Param()),
+    __param(0, common_1.Param('code')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)

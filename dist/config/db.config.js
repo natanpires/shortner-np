@@ -14,7 +14,7 @@ const typeOrmConfig = () => ({
     cli: {
         migrationsDir: 'db/migrations',
     },
-    synchronize: true,
+    synchronize: false,
     ssl: { rejectUnauthorized: false },
 });
 exports.default = typeOrmConfig;
