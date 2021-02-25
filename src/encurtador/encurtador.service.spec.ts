@@ -8,13 +8,16 @@ describe('EncurtadorService', () => {
   let service: EncurtadorService;
 
   const mockRepository = {
-    create: jest.fn().mockReturnValue({
-      url: 'http://wisereducacao.com',
-      newUrl: 'localhost:8081/undefined',
+    create: jest.fn().mockReturnValue(<Encurtador>{
+      url: 'http://test.com',
+      code: 'jyQUgf',
     }),
-    findOne: jest.fn().mockReturnValue({
-      url: 'http://wisereducacao.com',
+    findOne: jest.fn().mockReturnValue(<Encurtador>{
+      code: 'jyQUgf',
+      url: 'http://test.com',
     }),
+    save: jest.fn(),
+    remove: jest.fn(),
   };
 
   beforeEach(async (done) => {
@@ -36,25 +39,23 @@ describe('EncurtadorService', () => {
       expect(service).toBeDefined();
     });
 
-    it('should create an ShowDto object', async (done) => {
+    it('should create an ShowDto object', () => {
       const result = new ShowDto();
-      result.newUrl = 'localhost:8081/undefined';
-      result.url = 'http://wisereducacao.com';
+      result.newUrl = 'localhost:8081/jyQUgf';
+      result.url = 'http://test.com';
 
       const data = service.create({
-        longUrl: 'http://wisereducacao.com',
+        longUrl: 'http://test.com',
       });
       expect(data).resolves.toStrictEqual(result);
-      done();
     });
 
-    it('should find and return an ShowDto object', async (done) => {
+    it('should find and return an ShowDto object', () => {
       const result = new ShowDto();
-      result.url = 'http://wisereducacao.com';
+      result.url = 'http://test.com';
 
-      const data = service.find('lyQUgJ');
+      const data = service.find('jyQUgf');
       expect(data).resolves.toStrictEqual(result);
-      done();
     });
   });
 });
